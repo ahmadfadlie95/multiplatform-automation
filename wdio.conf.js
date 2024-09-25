@@ -54,7 +54,7 @@ exports.config = {
     //
     capabilities: {
 
-        a: {
+        web: {
             "host": "localhost",
             "port": 9515,
             "path": "/",
@@ -62,13 +62,13 @@ exports.config = {
                 browserName: 'chrome'
             }
         },
-        b: {
+        mobile: {
             "host": "localhost",
             "port": 4723,
             capabilities: {
                 platformName: "Android",
-                "appium:platformVersion": "11.0",
-                "appium:deviceName": "Pixel 4 API 30",
+                "appium:platformVersion": "13.0",
+                "appium:deviceName": "Pixel 4",
                 "appium:app": path.join(process.cwd(), ".\\app\\android\\ApiDemos-debug.apk"),
                 "appium:automationName": "UIAutomator2",
                 //"appium:avd": "2"

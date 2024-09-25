@@ -1,8 +1,20 @@
+const webScreen = require("../screenobjects/web.screen");
+const mobileScreen = require("../screenobjects/mobile.screen");
+
 describe('Sample', () => {
     it('Sample Test', async () => {
-        await a.url("https://www.google.com");
+        //Web Mode
+        //Launch the browser
+        await browser.maximizeWindow();
 
-        await b.startActivity("io.appium.android.apis", "io.appium.android.apis.ApiDemos");
-        await (await b.$("~Text")).click();
+        //Navigate to Google
+        await browser.url('https://www.google.com');
+
+        //Perform search actions
+        await web.$(webScreen.fields.searchField).setValue("Automation Practice");
+        await web.$(webScreen.buttons.searchBtn).click();
+
+        //Change to Mobile Mode
+        await mobile.$(mobileScreen.buttons.textBtn).click();
     })
 })
